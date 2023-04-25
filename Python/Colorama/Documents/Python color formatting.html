@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Python color formatting..md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #ff0000; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<ul>
+<li><a href="#python-color-formatting">Python color formatting.</a>
+<ul>
+<li><a href="#options-colorama-module-features">Options: colorama module features</a></li>
+<li><a href="#coloramainitautoresettrue">colorama.init(autoreset=True)</a></li>
+<li><a href="#all-combination-of-colors">all combination of colors</a></li>
+<li><a href="#print-bold-and-lighgt-color">print bold and lighgt color</a></li>
+</ul>
+</li>
+</ul>
+<br>
+<h1 id="python-color-formatting">Python color formatting.</h1>
+<p>The <code>colorama</code> module in Python is a third-party library that provides an easy way to add color and style to your console output. It allows you to change the text color, background color, and other text formatting options like bold, underline, and italic.</p>
+<p>To use <code>colorama</code>, you need to install it first. You can do this using pip by running the following command in your terminal:</p>
+<pre class="hljs"><code><div>pip install colorama
+</div></code></pre>
+<p>Once you have installed <code>colorama</code>, you can import it into your Python script as follows:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> colorama
+<span class="hljs-keyword">from</span> colorama <span class="hljs-keyword">import</span> Fore, Back, Style
+
+</div></code></pre>
+<p>The <code>Fore</code>, <code>Back</code>, and <code>Style</code> classes are provided by <code>colorama</code> and allow you to specify text color, background color, and text formatting options, respectively.</p>
+<p>Here's an example of how to use <code>colorama</code> to print colored text to the console:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> colorama
+<span class="hljs-keyword">from</span> colorama <span class="hljs-keyword">import</span> Fore, Back, Style
+
+<span class="hljs-comment"># Initialize colorama</span>
+colorama.init()
+
+<span class="hljs-comment"># Print colored text to the console</span>
+print(Fore.RED + <span class="hljs-string">'This text is red!'</span> + Style.RESET_ALL)
+print(Back.GREEN + <span class="hljs-string">'This text has a green background!'</span> + Style.RESET_ALL)
+print(Fore.YELLOW + Back.BLUE + <span class="hljs-string">'This text is yellow on a blue background!'</span> + Style.RESET_ALL)
+print(Style.BRIGHT + <span class="hljs-string">'This text is bold!'</span> + Style.RESET_ALL)
+
+</div></code></pre>
+<p>In this example, we first call the <code>colorama.init()</code> function to initialize <code>colorama</code>. Then we use the <code>Fore</code>, <code>Back</code>, and <code>Style</code> classes to specify the desired text color, background color, and text formatting options. We use <code>Style.RESET_ALL</code> to reset the text color, background color, and text formatting options to their default values.</p>
+<p>The <code>colorama</code> module is useful for adding visual cues to your console output and making it easier to read and understand. It is particularly useful when working with large amounts of text or when you need to emphasize certain parts of your output.
+<br></br></p>
+<hr>
+<h2 id="options-colorama-module-features">Options: colorama module features</h2>
+<hr>
+<p>Yes, the <code>colorama</code> module has several other features that can be useful for working with colored text in Python. Here are a few examples:</p>
+<ol>
+<li>
+<p><code>Back.RESET</code>: Resets the background color to its default value.</p>
+</li>
+<li>
+<p><code>Fore.RESET</code>: Resets the text color to its default value.</p>
+</li>
+<li>
+<p><code>Style.NORMAL</code>: Resets all text formatting to its default values (i.e., no bold or light text).</p>
+</li>
+<li>
+<p><code>init(autoreset=False)</code>: Initializes <code>colorama</code> with autoreset enabled or disabled. If <code>autoreset</code> is <code>True</code>, text formatting is automatically reset after each print statement. If <code>autoreset</code> is <code>False</code>, you need to manually reset the text formatting using <code>Style.RESET_ALL</code>.</p>
+</li>
+<li>
+<p><code>init(convert=True)</code>: Enables conversion of ANSI escape sequences to their equivalent Windows versions. This can be useful if you are working with a Windows terminal that doesn't support ANSI escape sequences.</p>
+</li>
+<li>
+<p><code>deinit()</code>: Deinitializes <code>colorama</code> and restores the terminal to its original state.</p>
+</li>
+<li>
+<p><code>Cursor.POS(x,y)</code>: Moves the cursor to the specified position on the terminal screen.</p>
+</li>
+</ol>
+<p>These are just a few examples of the features available in <code>colorama</code>. The module also provides other classes and functions for working with colors and formatting, and you can find more information in the official documentation.</p>
+<br>
+<h2 id="coloramainitautoresettrue">colorama.init(autoreset=True)</h2>
+<hr>
+<p>The <code>colorama.init(autoreset=True)</code> statement is used to enable automatic resetting of text formatting after each print statement.</p>
+<p>When <code>autoreset</code> is set to <code>True</code>, <code>colorama</code> will automatically reset the text formatting to its default values (i.e., no color, no bold or light text, etc.) after each print statement. This can be useful if you want to apply a specific color or formatting to a single print statement, but don't want that formatting to affect subsequent print statements.</p>
+<p>Here's an example that demonstrates how <code>colorama.init(autoreset=True)</code> works:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> colorama
+<span class="hljs-keyword">from</span> colorama <span class="hljs-keyword">import</span> Fore, Back, Style
+
+<span class="hljs-comment"># Initialize colorama with autoreset enabled</span>
+colorama.init(autoreset=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment"># Print some text with color and formatting</span>
+print(Fore.RED + <span class="hljs-string">'This text is red and bold.'</span>)
+print(Back.GREEN + <span class="hljs-string">'This text has a green background.'</span>)
+print(Style.DIM + <span class="hljs-string">'This text is light.'</span>)
+print(Fore.YELLOW + Back.BLUE + <span class="hljs-string">'This text is yellow on a blue background and bold.'</span>)
+
+<span class="hljs-comment"># Print some more text without any formatting</span>
+print(<span class="hljs-string">'This text has no formatting.'</span>)
+
+</div></code></pre>
+<p>In this example, we initialize <code>colorama</code> with <code>autoreset=True</code>. We then print some text with various colors and formatting options using the <code>Fore</code>, <code>Back</code>, and <code>Style</code> classes from <code>colorama</code>.</p>
+<p>Notice that we don't call <code>Style.RESET_ALL</code> after each print statement, but the text formatting is automatically reset to its default values for each subsequent print statement. The last print statement (&quot;This text has no formatting.&quot;) is printed without any color or formatting, even though the previous print statement had yellow text on a blue background with bold formatting. This is because <code>autoreset=True</code> automatically resets the text formatting after each print statement.</p>
+<br>
+<h2 id="all-combination-of-colors">all combination of colors</h2>
+<hr>
+<p>An example of how you can print all possible combinations of text color and background color using the <code>colorama</code> module in Python:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> colorama
+<span class="hljs-keyword">from</span> colorama <span class="hljs-keyword">import</span> Fore, Back, Style
+
+<span class="hljs-comment"># Initialize colorama</span>
+colorama.init()
+
+<span class="hljs-comment"># Define a list of all available colors</span>
+colors = [Fore.BLACK, Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
+bg_colors = [Back.BLACK, Back.RED, Back.GREEN, Back.YELLOW, Back.BLUE, Back.MAGENTA, Back.CYAN, Back.WHITE]
+
+<span class="hljs-comment"># Loop through all combinations of colors and background colors</span>
+<span class="hljs-keyword">for</span> bg_color <span class="hljs-keyword">in</span> bg_colors:
+    <span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:
+        print(color + bg_color + <span class="hljs-string">'Hello, World!'</span> + Style.RESET_ALL)
+
+</div></code></pre>
+<p>In this example, we define two lists <code>colors</code> and <code>bg_colors</code> that contain all available text colors and background colors, respectively. We then use nested loops to iterate through all possible combinations of text color and background color and print the text &quot;Hello, World!&quot; in each combination. We use <code>Style.RESET_ALL</code> to reset the text color and background color to their default values before printing the next combination.</p>
+<br>
+<h2 id="print-bold-and-lighgt-color">print bold and lighgt color</h2>
+<hr>
+<p>To print both bold and light versions of each color using the <code>colorama</code> module. Here's an example that shows how to do this:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> colorama
+<span class="hljs-keyword">from</span> colorama <span class="hljs-keyword">import</span> Fore, Back, Style
+
+<span class="hljs-comment"># Initialize colorama</span>
+colorama.init()
+
+<span class="hljs-comment"># Define a list of all available colors</span>
+colors = [Fore.BLACK, Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
+
+<span class="hljs-comment"># Loop through all colors and print both bold and light versions</span>
+<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:
+    print(color + <span class="hljs-string">'This is regular '</span> + Style.BRIGHT + <span class="hljs-string">'and this is bold '</span> + Style.RESET_ALL)
+    print(color + <span class="hljs-string">'This is light '</span> + Style.DIM + <span class="hljs-string">'and this is regular '</span> + Style.RESET_ALL)
+
+</div></code></pre>
+<p>In this example, we define a list <code>colors</code> that contains all available text colors. We then loop through each color and print both a regular and a bold version of the text, as well as a regular and a light version of the text.</p>
+<p>To print a bold version of the text, we use <code>Style.BRIGHT</code>. To print a light version of the text, we use <code>Style.DIM</code>. We use <code>Style.RESET_ALL</code> to reset the text formatting to its default value after each print statement.</p>
+
+</body>
+</html>

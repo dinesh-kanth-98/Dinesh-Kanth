@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+
+spawn git push --set-upstream https://github.com/dinesh-kanth-98/DK-Main.git main
+expect  "Username for 'https://github.com': "
+send "dinesh-kanth-98\r"
+expect "Password for 'https://dinesh-kanth-98@github.com':"
+send "<Password-key>"
+interact

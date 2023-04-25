@@ -1,0 +1,23 @@
+QWidget, QTabWidget::pane, QTabWidget::tab-bar {
+    background-color: rgb(38,38,38);
+    color: rgb(255, 213, 0);   /*#FFFFFF/*(white)*/
+}
+
+QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #1e5799, stop: 0.01 #2989d8, stop: 0.10 rgb(45, 45, 45));
+    color: #4F89CC;
+}
+
+QTabBar::tab:selected
+{
+    font-weight: bold;
+  background-color: #004926/*#007F4B/*#094943/*rgb(0, 117, 111);
+    /*border: 0px;
+    /*border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;*/
+   /* background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(31, 194, 0), stop:1 rgb(97, 0, 55));
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(11, 69, 0), stop:1 rgb(97, 0, 55));
+   /* background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 rgb(61, 19, 82), stop: 0.85 rgb(40, 69, 13), stop: 1 rgb(255, 0, 13)); */
+}
+"EOF"
+

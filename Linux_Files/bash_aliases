@@ -1,0 +1,19 @@
+alias c=clear
+alias p=pwd
+alias e=exit
+alias ip='ifconfig'
+alias r='cd -'
+alias ..='cd..'
+alias pi="ps -e | grep $1"
+alias inf="ls -lFh | grep -i $1"
+alias l='ls -F'
+alias ll='ls -alhF'
+alias llt='ls -hlFtr'
+alias OA='( code ~/.bash_aliases & ) > /dev/null 2>&1'
+alias OB='( code ~/.bashrc & ) > /dev/null 2>&1'
+alias OBP='( code ~/.bash_profile & ) > /dev/null 2>&1'
+alias KF='pkill firefox'
+alias RGP='git restore git_push.exp'
+alias BR='source ~/.bashrc'
+
+

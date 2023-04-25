@@ -1,0 +1,98 @@
+Download for Linux and Unix
+
+It is easiest to install Git on Linux using the preferred package manager of your Linux distribution. If you prefer to build from source, you can find tarballs on kernel.org. The latest version is 2.40.0.
+Debian/Ubuntu
+
+For the latest stable version for your release of Debian/Ubuntu
+# sudo apt-get install git
+
+For Ubuntu, this PPA provides the latest stable upstream Git version
+# sudo add-apt-repository ppa:git-core/ppa 
+# sudo apt update; apt install git 
+
+######################GIT Configuration###########################
+
+verify after installation with cmd
+# git --version
+
+To add user name to your git account 
+#git config --global user.name sunil
+
+To add email address to yur git account 
+#git config --global user.email vajjavenkatasunil@gmail.com
+
+To know the user name of the your git account
+#git config user.name
+
+To know the file status gives the files status and git regarding info of indivudual files
+#git status
+
+To add the file to git moitoring 
+#git add <filename>
+
+To remove from the git monotioring the file 
+#git rm --cached -f  <filename>
+
+
+To add the directory to git moitoring 
+#git add .
+
+To remove from the git monotioring the directory 
+#git rm --cached -f  -r .
+
+note:-
+-f = forecfully
+-r = recursively
+
+To make commit in git 
+#git commit -m "ADD YOUR COMMENT TO THE COMMIT"
+
+To see the commit logs 
+#git log
+
+To get only a commit COMMENT in logs
+#git log --oneline
+
+To get back ro the COMMIT number 
+#git checkout <COMMIT_NUMBER>
+
+NOTE:- COMMIT_NUMBER can get it from the "git log" cmd
+
+To revert the to a specific COMMIT_NUMBER
+#git revert <COMMIT_NUMBER>
+
+
+To list all the Branchs created and WORKING branch is GREEN color highleted 
+#git branch -a
+
+To add branch 
+#git branch <BRANCH_NAME>
+
+To Switch in between brancks 
+#git checkout <BRANCH_NAME> // Now your are moved to the <BRANCH_NAME>
+
+To delete the branch 
+#git branch -d <BRANCH_NAME>	// normal delete tries to delete by looking fro the uncommited changes/unmerged to master
+
+To merge the branch in to a master
+STEP-1: Make sure that working brach changes are commited.
+
+STEP-2: Get back to master/branch we wanted to merge our code.by cmd 
+	#git branch  <BRANCH_NAME>
+STEP-3: use command to merge
+	#git merge <BRANCH_NAME>
+	
+To create BRANCH and move to BRANCH in single command
+# git checkout -b <BRANCH_NAME>
+
+To push the branch to the github we faced a error of password over here resolved as
+STEP-1:- click on profile ICON goto settings page of git hub => Developer options
+STEP-2:- click on personal access tokens and go tocken classic
+STEP-3:- generate a token and generated tocken is used as PASSWORD to push the code to git hub.
+							
+							
+sequence to be followed to upload to git hub
+#git pull https://github.com/dinesh-kanth-98/DK-Main.git
+
+#git push --set-upstream https://github.com/dinesh-kanth-98/DK-Main.git <branch>
+					
