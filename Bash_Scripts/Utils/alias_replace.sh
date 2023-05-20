@@ -38,7 +38,7 @@ StartFromHere() {
 	done
 	ReadAndValidate
 
-	LINE_NO=$(awk "/alias ${ALIAS_SHORTCUTS[$OPTION]}/ { print NR }" ${FILE_NAME})
+	LINE_NO=$(awk "/alias ${ALIAS_SHORTCUTS[$OPTION]}=/ { print NR }" ${FILE_NAME})
 	if [ "${LINE_NO}" != "" ];
 	then
 		BIGREEN "alias ${ALIAS_SHORTCUTS[$OPTION]} Found In ${FILE_NAME}, Line No:$LINE_NO" 
