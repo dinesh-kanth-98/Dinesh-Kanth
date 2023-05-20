@@ -77,89 +77,89 @@ On_IWhite='\033[0;107m'   # White
 #red color patterns
 RED()
 {
-	echo -e "${Red}$1 ${Color_Off}"
+	echo -e "$2${Red}$1 ${Color_Off}"
 }
 BRED()
 {
-	echo -e "${BRed}$1 ${Color_Off}"
+	echo -e "$2${BRed}$1 ${Color_Off}"
 }
 URED()
 {
-	echo -e "${URed}$1 ${Color_Off}"
+	echo -e "$2${URed}$1 ${Color_Off}"
 }
 IRED()
 {
-	echo -e "${IRed}$1 ${Color_Off}"
+	echo -e "$2${IRed}$1 ${Color_Off}"
 }
 BIRED()
 {
-	echo -e "${BIRed}$1 ${Color_Off}"
+	echo -e "$2${BIRed}$1 ${Color_Off}"
 }
 
 #green color patterns
 GREEN()
 {
-	echo -e "${Green}$1 ${Color_Off}"
+	echo -e "$2${Green}$1 ${Color_Off}"
 }
 
 BGREEN()
 {
-	echo -e "${BGreen}$1 ${Color_Off}"
+	echo -e "$2${BGreen}$1 ${Color_Off}"
 }
 IGREEN()
 {
-	echo -e "${IGreen}$1 ${Color_Off}"
+	echo -e "$2${IGreen}$1 ${Color_Off}"
 }
 BIGREEN()
 {
-	echo -e "${BIGreen}$1 ${Color_Off}"
+	echo -e "$2${BIGreen}$1 ${Color_Off}"
 }
 UGREEN()
 {
-	echo -e "${UGreen}$1 ${Color_Off}"
+	echo -e "$2${UGreen}$1 ${Color_Off}"
 }
 
 #yellow color patterns
 YELLOW()
 {
-	echo -e "${Yellow}$1 ${Color_Off}"
+	echo -e "$2${Yellow}$1 ${Color_Off}"
 }
 BYELLOW()
 {
-	echo -e "${BYellow}$1 ${Color_Off}"
+	echo -e "$2${BYellow}$1 ${Color_Off}"
 }
 IYELLOW()
 {
-	echo -e "${IYellow}$1 ${Color_Off}"
+	echo -e "$2${IYellow}$1 ${Color_Off}"
 }
 BIYELLOW()
 {
-	echo -e "${BIYellow}$1 ${Color_Off}"
+	echo -e "$2${BIYellow}$1 ${Color_Off}"
 }
 UYELLOW()
 {
-	echo -e "${UYellow}$1 ${Color_Off}"
+	echo -e "$2${UYellow}$1 ${Color_Off}"
 }
 
 BLUE()
 {
-	echo -e "${Blue}$1 ${Color_Off}"
+	echo -e "$2${Blue}$1 ${Color_Off}"
 }
 BBLUE()
 {
-	echo -e "${BBlue}$1 ${Color_Off}"
+	echo -e "$2${BBlue}$1 ${Color_Off}"
 }
 IBLUE()
 {
-	echo -e "${IBlue}$1 ${Color_Off}"
+	echo -e "$2${IBlue}$1 ${Color_Off}"
 }
 BIBLUE()
 {
-	echo -e "${BIBlue}$1 ${Color_Off}"
+	echo -e "$2${BIBlue}$1 ${Color_Off}"
 }
 UBLUE()
 {
-	echo -e "${UBlue}$1 ${Color_Off}"
+	echo -e "$2${UBlue}$1 ${Color_Off}"
 }
 
 PURPLE()
@@ -180,47 +180,68 @@ BIPURPLE()
 }
 UPURPLE()
 {
-	echo -e "${UPurple}$1 ${Color_Off}"
+	echo -e "$2${UPurple}$1 ${Color_Off}"
 }
 
 CYAN()
 {
-	echo -e "${Cyan}$1 ${Color_Off}"
+	echo -e "$2${Cyan}$1 ${Color_Off}"
 }
 BCYAN()
 {
-	echo -e "${BCyan}$1 ${Color_Off}"
+	echo -e "$2${BCyan}$1 ${Color_Off}"
 }
 ICYAN()
 {
-	echo -e "${ICyan}$1 ${Color_Off}"
+	echo -e "$2${ICyan}$1 ${Color_Off}"
 }
 BICYAN()
 {
-	echo -e "${BICyan}$1 ${Color_Off}"
+	echo -e "$2${BICyan}$1 ${Color_Off}"
 }
 UCYAN()
 {
-	echo -e "${UCyan}$1 ${Color_Off}"
+	echo -e "$2${UCyan}$1 ${Color_Off}"
 }
 
 WHITE()
 {
-	echo -e "${White}$1 ${Color_Off}"
+	echo -e "$2${White}$1 ${Color_Off}"
 }
 BWHITE()
 {
-	echo -e "${BWhite}$1 ${Color_Off}"
+	echo -e "$2${BWhite}$1 ${Color_Off}"
 }
 IWHITE()
 {
-	echo -e "${IWhite}$1 ${Color_Off}"
+	echo -e "$2${IWhite}$1 ${Color_Off}"
 }
 BIWHITE()
 {
-	echo -e "${BIWhite}$1 ${Color_Off}"
+	echo -e "$2${BIWhite}$1 ${Color_Off}"
 }
 UWHITE()
 {
-	echo -e "${UWhite}$1 ${Color_Off}"
+	echo -e "$2${UWhite}$1 ${Color_Off}"
+}
+
+BLACK()
+{
+	echo -e "$2${Black}$1 ${Color_Off}"
+}
+BBLACK()
+{
+	echo -e "$2${BBlack}$1 ${Color_Off}"
+}
+IBLACK()
+{
+	echo -e "$2${IBlack}$1 ${Color_Off}"
+}
+BIBLACK()
+{
+	echo -e "$2${BIBlack}$1 ${Color_Off}"
+}
+UBLACK()
+{
+	echo -e "$2${UBlack}$1 ${Color_Off}"
 }
