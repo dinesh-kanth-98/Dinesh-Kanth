@@ -118,4 +118,13 @@ BackGroundColors()
 		done
 	done
 }
-[ "$1" == "" ] && colors || BackGroundColors
+tput_colors()
+{
+	declare -i i
+	for i in $(seq 1 255); do
+		tput setaf $i
+		echo "echo \"\$(tput setaf $i) this_color_No_is_$i \$(tput sgr 0)\""
+	done
+}
+[ "$1" == "tput" ] && { tput_colors;exit 0; }
+[ -z "$1"] && colors || BackGroundColors
