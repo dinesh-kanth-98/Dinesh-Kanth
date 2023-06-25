@@ -1,4 +1,3 @@
-git_push.exp
 Bash/Bash_Documentation/Bash_Projects/
 Bash/Books/
 C_Laungauge/
@@ -7,7 +6,4 @@ Linux/
 Python/2_Automate_the_Boring_Stuff_with_Python/
 Bash/Bash_Documentation/
 Python/05_Python_programs/
-
-
-
-
+git_push_local_copy.exp
