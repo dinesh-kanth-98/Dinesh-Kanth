@@ -1,8 +1,16 @@
 #!/usr/bin/expect
 
-spawn git push --set-upstream https://github.com/dinesh-kanth-98/DK-Main.git main
+#spawn git push --set-upstream https://github.com/dinesh-kanth-98/DK-Main.git main
+
+#exec git remote add origin https://github.com/dinesh-kanth-98/Dinesh-Kanth.git
+
+spawn git push -u origin main
 expect  "Username for 'https://github.com': "
 send "dinesh-kanth-98\r"
 expect "Password for 'https://dinesh-kanth-98@github.com':"
 send "<Password-key>"
 interact
+
+#git remote add origin https://github.com/dinesh-kanth-98/Dinesh-Kanth.git
+#git branch -M main
+#git push -u origin main
