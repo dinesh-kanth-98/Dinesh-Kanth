@@ -1,9 +1,10 @@
 Bash/Bash_Documentation/
 Bash/Bash_Projects/
-C_Laungauge/
+C_Laungauge/*
 Git/
 Linux/
 Python/2_Automate_the_Boring_Stuff_with_Python/
 Bash/Bash_Documentation/
 Python/05_Python_programs/
 git_push_local_copy.exp
+!C_Laungauge/API/
