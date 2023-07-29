@@ -1,7 +1,6 @@
 **<div align="center" >Intro to Python</div>**
 
-## Table of content
-- [Table of content](#table-of-content)
+### Table of content
 - [What is Programming](#what-is-programming)
 - [What is Python](#what-is-python)
 - [Features of Python](#features-of-python)
