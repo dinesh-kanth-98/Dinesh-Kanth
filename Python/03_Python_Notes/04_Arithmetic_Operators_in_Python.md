@@ -7,6 +7,7 @@
   - [Operator Precedence Table:](#operator-precedence-table)
   - [Example:](#example)
 - [Operator Associativity:](#operator-associativity)
+- [BODMAS, BIDMAS, and PEMDAS Usage](#bodmas-bidmas-and-pemdas-usage)
 
 ## Arithmetic Operators in Python
 
@@ -162,3 +163,44 @@ However, there are some right-associative operators in Python. The exponentiatio
 Using parentheses can change the order of evaluation and override the default precedence and associativity. For example, in the expression `(2 + 3) * 4`, the addition inside the parentheses is evaluated first due to its higher precedence.
 
 It's essential to understand operator precedence and associativity to ensure that expressions are evaluated correctly and to avoid unexpected results in your Python programs.
+
+## BODMAS, BIDMAS, and PEMDAS Usage
+
+In mathematics and computer programming, BODMAS, BIDMAS, and PEMDAS are mnemonic devices used to remember the order of operations for evaluating arithmetic expressions. They help ensure that expressions are evaluated correctly and consistently, regardless of their complexity. Here's how each system is used:
+
+1. **BODMAS**: Bracket, Order, Division and Multiplication, Addition and Subtraction
+   - **Usage**: Follow the order of operations step by step when evaluating an expression.
+   - **Example**: `2 + 3 * (5 - 1) / 2`
+     - Evaluate parentheses: `5 - 1 = 4`
+     - Perform division: `3 * 4 / 2 = 6`
+     - Finally, perform addition: `2 + 6 = 8`
+
+2. **BIDMAS**: Bracket, Indices, Division and Multiplication, Addition and Subtraction
+   - **Usage**: Similar to BODMAS but emphasizes "Indices" instead of "Order" to handle exponents or powers.
+   - **Example**: `2 + 3 ** (5 - 1) / 2`
+     - Evaluate parentheses: `5 - 1 = 4`
+     - Evaluate exponent: `3 ** 4 = 81`
+     - Perform division: `81 / 2 = 40.5`
+     - Finally, perform addition: `2 + 40.5 = 42.5`
+
+3. **PEMDAS**: Parentheses, Exponents, Multiplication and Division, Addition and Subtraction
+   - **Usage**: Use parentheses to group parts of the expression and follow the order of operations accordingly.
+   - **Example**: `2 + 3 * (5 - 1) / 2`
+     - Evaluate parentheses: `5 - 1 = 4`
+     - Perform multiplication: `3 * 4 = 12`
+     - Perform division: `12 / 2 = 6`
+     - Finally, perform addition: `2 + 6 = 8`
+
+**Common Principles**:
+- Parentheses (Brackets) are always evaluated first, and calculations inside them are done before anything else.
+- Exponents (Indices, Order) are evaluated next.
+- Division and Multiplication are performed before Addition and Subtraction.
+- If there are multiple operations of the same type, they are evaluated from left to right.
+
+**Usage in Programming**:
+- In computer programming, understanding the order of operations is crucial for writing correct and efficient code with arithmetic expressions.
+- Programming languages, including Python, adhere to the BODMAS, BIDMAS, or PEMDAS rules when evaluating expressions.
+- Use parentheses to clarify the order of evaluation or override the default precedence when needed.
+
+**Conclusion**:
+BODMAS, BIDMAS, and PEMDAS are important concepts for mathematicians and programmers alike. They provide a systematic approach to handle complex arithmetic expressions and ensure that the results are consistent and accurate. When writing code that involves arithmetic calculations, it's essential to follow the appropriate order of operations to obtain the intended results.
