@@ -14,6 +14,7 @@
   - [Reverse String Using Slicing](#reverse-string-using-slicing)
     - [Example: Reverse String](#example-reverse-string)
 - [Rules Of Slicing](#rules-of-slicing)
+- [Rules Of Slicing With Negative Step Size](#rules-of-slicing-with-negative-step-size)
 - [Immutability of Strings in Python](#immutability-of-strings-in-python)
   - [What is Immutability?](#what-is-immutability)
   - [Demonstrating Immutability](#demonstrating-immutability)
@@ -206,13 +207,44 @@ print(reversed_str)  # Output: "!nohtyP ,olleH"
    s = "abcdefghijk"
    print(s[10:4])  # Output: ""
    ```
-   - Always the start should be greater than the end **`(start > end)`**.
+   - Always the start should be less than the end **`(start < end)`**.
+
+# Rules Of Slicing With Negative Step Size
+
+1. If the step value is negative, then the **`(start < end)`** Condition won't apply:
+    ```python
+    # Both are the same.
+    s = "Hello, Python!"
+    print(s[-1:-8:-1])  # Output: "!nohty"
+    ```
+
+2. **s[:end:-1]** If the `step value` is `negative` then **default value for `start` is `-1`**
+    ```python
+    # Both are the same.
+    s = "Hello, Python!"
+    print(s[:-4:-1])  # Output: "!no"
+    ```
+
+3. **s[start::-1]** If the `step value` is `negative` then **the default value for `end` is the `start of the string`**:
+    ```python
+    # Both are the same.
+    s = "Hello, Python!"
+    print(s[-4::-1])  # Output: "htyP ,olleH"
+    ```
+
+4. **s[::-1]** If the `step value` is `negative` then **default value for `start` is `-1`** and **the default value for `end` is the `start of the string`**:
+    ```python
+    s = "Hello, Python!"
+    s = s[::-1]
+    print(s)  # Output: "!nohtyP ,olleH"
+    ```
 
 # Immutability of Strings in Python
 
 In Python, strings are immutable, which means that once a string is created, its contents cannot be changed.
 - Immutability ensures that the value of a string remains the same throughout its lifetime.
 - This property has important implications in how strings are stored, accessed, and manipulated in Python.
+>>> string24[:-8:-1]
 
 ## What is Immutability?
 
