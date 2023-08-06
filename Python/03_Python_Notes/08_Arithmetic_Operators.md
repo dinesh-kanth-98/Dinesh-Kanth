@@ -1,4 +1,4 @@
-**<div align="center" >Variables and Data Types</div>**
+**<div align="center" >Arithmetic Operators in Python</div>**
 
 ### Table of content
 - [Arithmetic Operators in Python](#arithmetic-operators-in-python)

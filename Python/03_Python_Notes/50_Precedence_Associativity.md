@@ -1,4 +1,3 @@
-
 **<div align="center" >Precedence and Associativity of Operators</div>**
 
 ### Table of content
