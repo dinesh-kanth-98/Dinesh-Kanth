@@ -20,6 +20,8 @@ sudo apt install gnome-tweaks
 
 sudo apt  install konsole
 
+sudo apt install gcc
+
 sudo apt install dolphin
 
 sudo apt install git && git --version
@@ -49,7 +51,14 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
+sudo apt-get update
+
 sudo apt install code && code --version
 
+sudo apt install make
 
+sudo apt  install curl
 
+# for python
+
+sudo apt-get install zlib1g-dev
