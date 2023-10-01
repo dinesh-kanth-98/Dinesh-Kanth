@@ -59,6 +59,8 @@ sudo apt install make
 
 sudo apt  install curl
 
+sudo apt install meld -y
+
 # for python
 
 sudo apt-get install zlib1g-dev
