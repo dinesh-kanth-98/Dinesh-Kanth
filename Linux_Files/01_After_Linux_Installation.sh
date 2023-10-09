@@ -1,22 +1,25 @@
 cd
 
 # sudo apt-get update && sudo apt-get upgrade -y
+#un installinhg fire fox snap package
+udo snap remove firefox
 
 sudo apt-get install vim
 
-sudo apt-get net-tools
-
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer  
-
 sudo apt-get update 
-
 sudo apt-get install grub-customizer -y
 
 sudo apt install vlc
 
 sudo apt install preload
 
+#gnoome tweaks
 sudo apt install gnome-tweaks
+
+sudo apt install gnome-shell-extensions
+
+sudo apt install gnome-shell-extension-manager
 
 sudo apt  install konsole
 
@@ -61,6 +64,17 @@ sudo apt  install curl
 
 sudo apt install meld -y
 
+sudo apt  install expect -y
+
 # for python
 
 sudo apt-get install zlib1g-dev
+
+# installing chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get install -f
+sudo apt autoremove
+
+
+
