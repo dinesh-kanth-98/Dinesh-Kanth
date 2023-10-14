@@ -4,7 +4,7 @@ alias e=exit
 alias ip='ifconfig'
 alias r='cd -'
 alias ..='cd..'
-alias pi="ps -e | grep $1"
+alias pi="ps -e | grep -i $1"
 alias inf="ls -lFh | grep -i $1"
 alias l='ls -F'
 alias ll='ls -alhF'
@@ -18,5 +18,6 @@ alias BR='source ~/.bashrc'
 alias nb='( jupyter notebook & ) > /dev/null 2>&1'
 alias py="python3.11 $@"
 alias gss="git status"
-
-
+alias BPC='( meld ~/.bash_profile ~/GIT/Dinesh-Kanth/Linux_Files/bash_profile & ) > /dev/null 2>&1'
+alias ALC='( meld ~/.bash_aliases ~/GIT/Dinesh-Kanth/Linux_Files/bash_aliases & ) > /dev/null 2>&1'
+alias AF="alias | grep -i $1"
