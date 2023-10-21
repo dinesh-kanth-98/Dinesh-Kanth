@@ -1,0 +1,96 @@
+#!/usr/bin/expect
+set timeout 20
+
+# SSH Login Configuration
+set DeviceName  Windows
+#set Mac         00:FE:A2:07:BB:EE
+set IP          "192.168.1.22"
+set Password    "admin"
+set User        "root"
+
+# Trap signals for graceful exit
+trap {
+    puts "\nCtrl+Z Detected. Exiting..."
+    exit 20
+} SIGTSTP
+
+trap {
+    puts "\nCtrl+C Detected. Exiting..."
+    exit 2
+} SIGINT
+
+# Global variable to store the script filename
+global Script_File
+set Script_File [file tail [info script]]
+
+# Display usage information and exit
+proc HelpInfo {} {
+    global Script_File
+    puts "Usage: ./$Script_File        --> Login to SSH by entering the password"
+    puts "Usage: ./$Script_File -a     --> Change to Appl Path"
+    exit 0
+}
+
+# Check command-line arguments for help info
+if { [llength $argv] == 0 } {
+    # No arguments provided
+} else {
+    # Loop through command-line arguments
+    foreach arg $argv {
+        switch $arg {
+            "-h" {
+                HelpInfo
+            }
+            "--help" {
+                HelpInfo
+            }
+        }
+    }
+}
+
+# Spawn an SSH session
+spawn ssh $User@$IP
+sleep 0.3
+
+expect {
+    "*Connection refused" { puts "\nExpect: Connection refused... Login Failed"; exit 1; }
+    "*No route to host" { puts "\nExpect: Unable to connect to host... Login Failed"; exit 1; }
+    "*WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!*" { puts "\nExpect: Host Identification Has Changed... Login Failed"; exit 1; }
+    "*(yes/no)?" { send "yes\r"; exp_continue; }
+    "Password:"  { send "$Password\r" }
+    timeout { puts "\nExpect: No Response... Timeout, Exiting"; exit 1; }
+}
+
+expect {
+    "$ " { send_user "Login Successful"; send "\r\r"; }
+    "Password:" { puts "\nExpect: Wrong Password... Login Failed"; exit 1; }
+}
+
+# Check for additional command-line arguments
+if { [llength $argv] == 0 } {
+    # No arguments provided
+} else {
+    # Loop through command-line arguments
+    foreach arg $argv {
+        switch -- $arg {
+            "-a" {
+                # Change to Appl Path
+                if {[string match "$DeviceName" "DEVICE"]} {
+                    send "cd /home/\r"
+                    expect "$ "
+                } else {
+                    send "cd /etc/\r"
+                    expect "$ "
+                }
+            }
+
+            default {
+                # Nothing to do
+            }
+        }
+    }
+}
+
+# Give control of the current process to the user
+interact
+
