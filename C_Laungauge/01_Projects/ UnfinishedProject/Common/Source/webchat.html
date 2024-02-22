@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsApp Web-like Page</title>
+    <style>
+        /* Styles for the top bar */
+        .top-bar {
+            background-color: #128C7E;
+            color: white;
+            padding: 8px;
+        }
+
+        /* Styles for the header */
+        .header {
+            background-color: #075E54;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Styles for the chat list */
+        .chat-list {
+            width: 25%;
+            background-color: #f5f5f5;
+            height: 100%;
+            overflow-y: auto; /* Enable vertical scrolling within the chat list */
+        }
+
+        .chat-list-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        /* Styles for the chat window */
+        .chat-window {
+            width: 75%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow-y: auto; /* Enable vertical scrolling within the chat window */
+        }
+
+        .chat-messages {
+            flex: 1;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .chat-input button {
+            margin-left: 10px;
+            background-color: #128C7E;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden; /* Disable page scrolling */
+        }
+
+        .window {
+            width: 1800px;
+            height: 800px;
+            border: 2px solid hsl(0, 0%, 0%);
+            margin: 0 auto;
+            display: flex;
+        }
+        #body {
+            width: 1800px;
+            height: 800px;
+            border: 2px solid #000;
+            margin: 0 auto;
+            /* display: flex; */
+        }
+    </style>
+</head>
+<body id="body">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        WhatsApp Web
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Chat Header</h1>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="window" id="window">
+        <!-- Chat List -->
+        <div class="chat-list">
+            <div class="chat-list-item">Chat 1</div>
+            <div class="chat-list-item">Chat 2</div>
+            <div class="chat-list-item">Chat 3</div>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-messages">
+                <!-- Chat messages go here... -->
+                <p>User 1: Hello, how are you?</p>
+                <p>User 2: I'm good, thanks! How about you?</p>
+                <p>User 1: I'm doing great.</p>
+                <!-- Add more chat data as needed -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type a message">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="Common.js"></script>
+    <script src="webchat.js"></script>
+</body>
+</html>

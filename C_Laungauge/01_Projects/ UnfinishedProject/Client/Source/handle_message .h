@@ -1,0 +1,20 @@
+#ifndef HANDLE_MESSAGE_H
+#define HANDLE_MESSAGE_H
+#include "common_include.h"
+
+#define USER_MESSAGE_PARA_ENUM(MESSAGE_PARA_ENUM, MESSAGE_PARA_NAME) MESSAGE_PARA_ENUM,
+#define USER_MESSAGE_PARA_NAME(MESSAGE_PARA_ENUM, MESSAGE_PARA_NAME) MESSAGE_PARA_NAME,
+
+#define USER_MESSAGE_DATA_STRINGS(API)\
+    API(USER_MESSAGE_DATA_NAME,    "currentUserName")\
+    API(USER_MESSAGE_DATA_MESSAGE,     "currentUserMessage")\
+
+
+typedef enum
+{
+    USER_MESSAGE_DATA_STRINGS(USER_MESSAGE_PARA_ENUM)
+    MAX_MESSAGE_DATA,
+} USER_MESSAGE_DATA_e;
+void ParseAndSendMessage(int client_socket, const char *request_data, VOIDPTR str);
+
+#endif
