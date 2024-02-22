@@ -1,9 +1,9 @@
  
 # Project Compilation Readme
 
-## Overview
+## Project Overview
 
-This readme provides instructions on how to compile the project from source code. Please follow the steps outlined below for successful compilation.
+This project enables communication between multiple clients through a central server. Clients can exchange messages with each other via a web page interface supported by the server.
 
 ## Compilation Instructions
 
